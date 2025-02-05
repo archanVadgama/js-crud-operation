@@ -26,10 +26,13 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- Custom script -->
-    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/script.js" type="module"></script>
   </head>
 
   <body>
+    <!-- START: Toast container -->
+    <div id="toast-container"></div>
+    <!-- END: Toast container -->
     <!-- START: Header -->
     <header class="header">
       <nav class="navigation-container">
@@ -42,14 +45,24 @@
               <a class="active" href="../dashboard/index.html">Dashboard</a>
             </li>
             <li><a href="../product/index.html">Products List</a></li>
-            <li><a href="../product/view.html">View Products</a></li>
-            <li><a href="../product/index.html">Restore Products</a></li>
+            <li><a href="../product/restore.html">Restore Products</a></li>
           </ul>
         </div>
         <div class="right-menu">
           <ul>
             <li><a href="#about">ADMIN</a></li>
           </ul>
+        </div>
+        <div class="responsive-nav">
+          <div class="center-menu">
+            <ul>
+              <li><a href="../dashboard/index.html">Dashboard</a></li>
+              <li>
+                <a href="../product/index.html">Products List</a>
+              </li>
+              <li><a class="active" href="../product/restore.html">Restore Products</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

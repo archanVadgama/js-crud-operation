@@ -26,10 +26,13 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
 
     <!-- Custom script -->
-    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/script.js" type="module" defer></script>
   </head>
 
   <body>
+    <!-- START: Toast container -->
+    <div id="toast-container"></div>
+    <!-- END: Toast container -->
     <!-- START: Header -->
     <header class="header">
       <nav class="navigation-container">
@@ -42,14 +45,28 @@
             <li>
               <a href="../product/index.html">Products List</a>
             </li>
-            <li><a href="../product/view.html">View Products</a></li>
-            <li><a href="../product/index.html">Restore Products</a></li>
+            <li><a href="../product/restore.html">Restore Products</a></li>
           </ul>
         </div>
         <div class="right-menu">
           <ul>
             <li><a href="#about">ADMIN</a></li>
           </ul>
+        </div>
+        <div class="responsive-nav">
+          <div class="center-menu">
+            <ul>
+              <li><a href="../dashboard/index.html">Dashboard</a></li>
+              <li>
+                <a href="../product/index.html">Products List</a>
+              </li>
+              <li>
+                <a class="active" href="../product/restore.html"
+                  >Restore Products</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -63,91 +80,79 @@
 
     <!-- START: Content -->
     <section class="container">
-      <form action="">
-        <div class="form-group">
-          <label for="image">Image:</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            class="form-control"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="productName">Product Name:</label>
-          <input
-            type="text"
-            id="productName"
-            name="productName"
-            class="form-control"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="productDescription">Product Description:</label>
-          <textarea
-            id="productDescription"
-            name="productDescription"
-            class="form-control"
-            rows="4"
-            required
-          ></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="productShortDescription">Short Description:</label>
-          <textarea
-            id="productShortDescription"
-            name="productShortDescription"
-            class="form-control"
-            rows="2"
-            required
-          ></textarea>
-        </div>
-        <div class="row">
+      <div class="product-form">
+        <form action="" id="add-product">
           <div class="form-group">
-            <label for="originalPrice">Original Price:</label>
+            <label for="image">Image:</label>
             <input
-              type="number"
-              id="originalPrice"
-              name="originalPrice"
+              type="file"
+              id="image"
+              name="image"
+              accept="image/*"
               class="form-control"
-              required
-              min="0"
-              step="0.01"
             />
           </div>
 
           <div class="form-group">
-            <label for="discountPrice">Discount Price:</label>
+            <label for="productName">Product Name:</label>
             <input
-              type="number"
-              id="discountPrice"
-              name="discountPrice"
+              type="text"
+              id="productName"
+              name="productName"
               class="form-control"
-              required
-              min="0"
-              step="0.01"
             />
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="productTags">Product Tags:</label>
-          <input
-            type="text"
-            id="productTags"
-            name="productTags"
-            class="form-control"
-          />
-        </div>
-        <div class="form-group form-btn">
-          <button type="submit" class="btn">Add Product</button>
-        </div>
-      </form>
+          <div class="form-group">
+            <label for="productDescription">Product Description:</label>
+            <textarea
+              id="productDescription"
+              name="productDescription"
+              class="form-control"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="productShortDescription">Short Description:</label>
+            <textarea
+              id="productShortDescription"
+              name="productShortDescription"
+              class="form-control"
+              rows="2"
+            ></textarea>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="originalPrice">Original Price:</label>
+              <input
+                type="number"
+                id="originalPrice"
+                name="originalPrice"
+                class="form-control"
+                min="0"
+                step="0.01"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="discountPrice">Discount Price:</label>
+              <input
+                type="number"
+                id="discountPrice"
+                name="discountPrice"
+                class="form-control"
+                min="0"
+                step="0.01"
+              />
+            </div>
+          </div>
+
+          <div class="form-group form-btn">
+            <button type="submit" class="btn" id="addBtn">Add Product</button>
+          </div>
+        </form>
+      </div>
     </section>
     <!-- END: Content -->
   </body>
