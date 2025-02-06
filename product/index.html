@@ -72,16 +72,14 @@
     <div class="title-container">
       <p class="font-large">Products List</p>
       <div>
-        <span class="filter-span"
-          ><i class="fa-solid fa-filter"></i> Filter: &nbsp;</span
-        >
-        <select class="btn-filter">
+        <select class="btn-filter" id="sortFilter">
+          <option selected hidden>---Filter Product---</option>
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
           <option value="highToLow">Price: High to Low</option>
           <option value="lowToHigh">Price: Low to High</option>
         </select>
-        <a class="btn" href="/product/add.html">
+        <a class="btn" href="/product/form.html">
           <i class="fa-solid fa-plus"></i> &nbsp; Add Product
         </a>
       </div>
@@ -101,8 +99,7 @@
             <th class="actions">Action</th>
           </tr>
         </thead>
-        <tbody class="all-product">
-        </tbody>
+        <tbody class="all-product"></tbody>
       </table>
     </section>
 

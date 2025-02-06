@@ -45,7 +45,11 @@
             <li>
               <a href="../product/index.html">Products List</a>
             </li>
-            <li><a class="active"  href="../product/restore.html">Restore Products</a></li>
+            <li>
+              <a class="active" href="../product/restore.html"
+                >Restore Products</a
+              >
+            </li>
           </ul>
         </div>
         <div class="right-menu">
@@ -60,7 +64,11 @@
               <li>
                 <a href="../product/index.html">Products List</a>
               </li>
-              <li><a class="active" href="../product/restore.html">Restore Products</a></li>
+              <li>
+                <a class="active" href="../product/restore.html"
+                  >Restore Products</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -75,13 +83,13 @@
         <span class="filter-span"
           ><i class="fa-solid fa-filter"></i> Filter: &nbsp;</span
         >
-        <select class="btn-filter">
+        <select class="btn-filter" id="sortRestoreFilter">
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
           <option value="highToLow">Price: High to Low</option>
           <option value="lowToHigh">Price: Low to High</option>
         </select>
-        <a class="btn" href="/product/add.html">
+        <a class="btn" href="/product/form.html">
           <i class="fa-solid fa-plus"></i> &nbsp; Add Product
         </a>
       </div>
@@ -101,8 +109,7 @@
             <th class="actions">Action</th>
           </tr>
         </thead>
-        <tbody class="deleted-product">
-        </tbody>
+        <tbody class="deleted-product"></tbody>
       </table>
     </section>
 
