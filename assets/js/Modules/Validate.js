@@ -1,112 +1,107 @@
-import { showToast } from "./Toast.js";
-
 class Validate {
-    // constructor(value) {
-    //     this.name = this.productLength(value.name);
-    //     this.image = this.imageValidation(value.image);
-    //     this.originalPrice = this.priceLength(value.originalPrice);
-    //     this.discountPrice = this.priceLength(value.discountPrice);
-    //     this.description = this.descriptionLength(value.description);
-    //     this.shortDescription = this.shortDescriptionLength(value.shortDescription);
-    // }
 
+    // Check if the value is empty or not
     checkEmpty(value) {
         if (value === null || value === "" || value === undefined) {
             const errorMessage = "This field is required";
-            // showToast("danger", errorMessage);
             return errorMessage;
         }
         return true;
     }
 
+    // Check the proudct lenght
     productLength(value) {
-        const min = 3;
-        const max = 20;
+        const MIN_LENGTH = 3;
+        const MAX_LENGTH = 20;
 
         const emptyCheck = this.checkEmpty(value);
         if (emptyCheck !== true) {
             return emptyCheck; 
         }
 
-
-        if (value.length < min || value.length > max) {
-            return `Product name must be between ${min} and ${max} characters.`;
+        if (value.length < MIN_LENGTH || value.length > MAX_LENGTH) {
+            return `Product name must be between ${MIN_LENGTH} and ${MAX_LENGTH} characters.`;
         }
 
         return true;
     }
 
+    // Check the price length
     priceLength(value) {
-        const min = 1;
-        const max = 7;
+        const MIN_LENGTH = 1;
+        const MAX_LENGTH = 7;
         
         const emptyCheck = this.checkEmpty(value);
         if (emptyCheck !== true) {
             return emptyCheck; 
         }
         
-        if (value < min || value.length > max) {
-            return `Price must be between ${min} and ${max}.`;
+        if (value < MIN_LENGTH || value.length > MAX_LENGTH) {
+            return `Price must be between ${MIN_LENGTH} and ${MAX_LENGTH}.`;
         }
+
         return true;
     }
-    
+
+    // checek image validation
     imageValidation(value) {
         const validFormats = ["image/png", "image/jpeg", "image/jpg"];
-        const maxSize = 5 * 1024 * 1024;
+        const MAX_LENGTHSize = 2 * 1024 * 1024;
 
         const emptyCheck = this.checkEmpty(value);
         if (emptyCheck !== true) {
             return emptyCheck; 
         }
         
+        // chec if image is selected or not
         if (value.name == '') {
-            // showToast("danger", "File size should not be greater than 5MB.");
             return "Please select an image.";
-            throw new Error("Please select an image.");
         }
+
+        // it wil chek the file format
         if (!validFormats.includes(value.type)) {
-            // showToast("danger","Invalid file format. Only PNG, JPG and JPEG are allowed.");
             return "Invalid file format. Only PNG, JPG and JPEG are allowed.";
-            throw new Error(
-                "Invalid file format. Only PNG, JPG and JPEG are allowed."
-            );
         }
-        if (value.size > maxSize) {
-            // showToast("danger", "File size should not be greater than 5MB.");
-            return "File size should not be greater than 5MB.";
-            throw new Error("File size should not be greater than 5MB.");
+        
+        // check the file size
+        if (value.size > MAX_LENGTHSize) {
+            return "File size should not be greater than 2MB.";
         }
+        
         return true;
     }
 
+    // cjheck the length of description
     descriptionLength(value) {
-        const min = 10;
-        const max = 100;
+        const MIN_LENGTH = 10;
+        const MAX_LENGTH = 100;
 
         const emptyCheck = this.checkEmpty(value);
         if (emptyCheck !== true) {
             return emptyCheck; 
         }
 
-        if (value.length < min || value.length > max) {
-            return `Description must be between ${min} and ${max} characters.`;
+        if (value.length < MIN_LENGTH || value.length > MAX_LENGTH) {
+            return `Description must be between ${MIN_LENGTH} and ${MAX_LENGTH} characters.`;
         }
+
         return true;
     }
 
+    // cjheck the length of short description
     shortDescriptionLength(value) {
-        const min = 10;
-        const max = 30;
+        const MIN_LENGTH = 10;
+        const MAX_LENGTH = 30;
 
         const emptyCheck = this.checkEmpty(value);
         if (emptyCheck !== true) {
             return emptyCheck; 
         }
 
-        if (value.length < min || value.length > max) {
-            return `Short description must be between ${min} and ${max} characters.`;
+        if (value.length < MIN_LENGTH || value.length > MAX_LENGTH) {
+            return `Short description must be between ${MIN_LENGTH} and ${MAX_LENGTH} characters.`;
         }
+        
         return true;
     }
 }

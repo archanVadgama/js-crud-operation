@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product List - JS CRUD Operation</title>
 
-    <!-- font awsome cdn -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product List - JS CRUD Operation</title>
 
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- font awsome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Custom style -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Custom script -->
-    <script src="/assets/js/script.js" type="module"></script>
-  </head>
+  <!-- Custom style -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <body>
-    <!-- START: Toast container -->
-    <div id="toast-container"></div>
-    <!-- END: Toast container -->
-    <!-- START: Header -->
-    <header class="header">
-      <nav class="navigation-container">
-        <div class="title">
-          <h3>JS CRUD Operation</h3>
-        </div>
+  <!-- Custom script -->
+  <script src="/assets/js/script.js" type="module"></script>
+</head>
+
+<body>
+  <!-- START: Toast container -->
+  <div id="toast-container"></div>
+  <!-- END: Toast container -->
+  <!-- START: Header -->
+  <header class="header">
+    <nav class="navigation-container">
+      <div class="title">
+        <h3>JS CRUD Operation</h3>
+      </div>
+      <div class="center-menu">
+        <ul>
+          <li><a href="../dashboard/index.html">Dashboard</a></li>
+          <li>
+            <a href="../product/index.html">Products List</a>
+          </li>
+          <li>
+            <a class="active" href="../product/restore.html">Restore Products</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-menu">
+        <ul>
+          <li><span class="icon-color"><i class="fa-solid fa-bars"></i></span></li>
+        </ul>
+      </div>
+      <div class="responsive-nav">
+        <span class="close-nav btn">X</span>
         <div class="center-menu">
           <ul>
             <li><a href="../dashboard/index.html">Dashboard</a></li>
@@ -46,73 +60,51 @@
               <a href="../product/index.html">Products List</a>
             </li>
             <li>
-              <a class="active" href="../product/restore.html"
-                >Restore Products</a
-              >
+              <a class="active" href="../product/restore.html">Restore Products</a>
             </li>
           </ul>
         </div>
-        <div class="right-menu">
-          <ul>
-            <li><a href="#about">ADMIN</a></li>
-          </ul>
-        </div>
-        <div class="responsive-nav">
-          <div class="center-menu">
-            <ul>
-              <li><a href="../dashboard/index.html">Dashboard</a></li>
-              <li>
-                <a href="../product/index.html">Products List</a>
-              </li>
-              <li>
-                <a class="active" href="../product/restore.html"
-                  >Restore Products</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- END: Header -->
-
-    <!-- START: Title Container -->
-    <div class="title-container">
-      <p class="font-large">Deleted Products</p>
-      <div>
-        <span class="filter-span"
-          ><i class="fa-solid fa-filter"></i> Filter: &nbsp;</span
-        >
-        <select class="btn-filter" id="sortRestoreFilter">
-          <option value="ascending">Ascending</option>
-          <option value="descending">Descending</option>
-          <option value="highToLow">Price: High to Low</option>
-          <option value="lowToHigh">Price: Low to High</option>
-        </select>
-        <a class="btn" href="/product/form.html">
-          <i class="fa-solid fa-plus"></i> &nbsp; Add Product
-        </a>
       </div>
+    </nav>
+  </header>
+  <!-- END: Header -->
+
+  <!-- START: Title Container -->
+  <div class="title-container">
+    <p class="font-large">Restore Products</p>
+    <div>
+      <span><i class="fa-solid fa-filter"></i> Filter: &nbsp;</span>
+      <select class="btn-filter" id="sortRestoreFilter">
+        <option value="ascending">Ascending</option>
+        <option value="descending">Descending</option>
+        <option value="highToLow">Price: High to Low</option>
+        <option value="lowToHigh">Price: Low to High</option>
+      </select>
+      <a class="btn" href="/product/form.html">
+        <i class="fa-solid fa-plus"></i> &nbsp; Add Product
+      </a>
     </div>
-    <!-- END: Title Container -->
+  </div>
+  <!-- END: Title Container -->
 
-    <!-- START: Content -->
-    <section class="container">
-      <table>
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th class="text-center">Original Price</th>
-            <th class="text-center">Discount Price</th>
-            <th>Updated At</th>
-            <th class="actions">Action</th>
-          </tr>
-        </thead>
-        <tbody class="deleted-product"></tbody>
-      </table>
-    </section>
+  <!-- START: Content -->
+  <section class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th class="text-center">Original Price</th>
+          <th class="text-center">Discount Price</th>
+          <th>Updated At</th>
+          <th class="actions">Action</th>
+        </tr>
+      </thead>
+      <tbody class="deleted-product"></tbody>
+    </table>
+  </section>
 
-    <!-- END: Content -->
-  </body>
+  <!-- END: Content -->
+</body>
+
 </html>

@@ -50,17 +50,20 @@
         </div>
         <div class="right-menu">
           <ul>
-            <li><a href="#about">ADMIN</a></li>
+            <li><span class="icon-color"><i class="fa-solid fa-bars"></i></span></li>
           </ul>
         </div>
         <div class="responsive-nav">
+          <span class="close-nav btn">X</span>
           <div class="center-menu">
             <ul>
               <li><a href="../dashboard/index.html">Dashboard</a></li>
               <li>
-                <a href="../product/index.html">Products List</a>
+                <a  class="active"  href="../product/index.html">Products List</a>
               </li>
-              <li><a href="../product/restore.html">Restore Products</a></li>
+              <li>
+                <a href="../product/restore.html">Restore Products</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -72,8 +75,8 @@
     <div class="title-container">
       <p class="font-large">Products List</p>
       <div>
+        <span><i class="fa-solid fa-filter"></i> Filter: &nbsp;</span>
         <select class="btn-filter" id="sortFilter">
-          <option selected hidden>---Filter Product---</option>
           <option value="ascending">Ascending</option>
           <option value="descending">Descending</option>
           <option value="highToLow">Price: High to Low</option>
@@ -87,7 +90,7 @@
     <!-- END: Title Container -->
 
     <!-- START: Content -->
-    <section class="container">
+    <section class="table-container">
       <table>
         <thead>
           <tr>
